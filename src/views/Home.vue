@@ -12,6 +12,7 @@ import {
   getDoc,
 } from "firebase/firestore";
 import router from "../router";
+import Header from "../components/header.vue";
 
 const me = getAuth();
 const db = getFirestore();
@@ -112,27 +113,6 @@ async function addTransaction(amount, description, category, date) {
 
 <template>
   <div>
-    <button @click="signOut">Sign Out</button>
-    <p>{{ me.currentUser.displayName }}</p>
-    <p>{{ me.currentUser.uid }}</p>
-    <p>{{ me.currentUser.email }}</p>
-
-    <form @submit.prevent="addTransaction(amount, description, category, date)">
-      <input v-model="amount" type="number" step="any" />
-      <input v-model="description" type="text" />
-      <input v-model="category" type="text" />
-      <input v-model="date" type="date" />
-      <button submit>Add Transaction</button>
-    </form>
-
-    Years:
-    <p v-for="(item, key) in yearsQuerySnapshot?.data()" :key="key">
-      <span>Year: {{ key }}</span>
-      <span>In: {{ item.in }}</span>
-      <span>Out: {{ item.out }}</span>
-      <span>Total: {{ item.total }}</span>
-    </p>
-
-    <p>Transactions: {{ transactionsQuerySnapshot?.docs.length }}</p>
+    <Header></Header>
   </div>
 </template>

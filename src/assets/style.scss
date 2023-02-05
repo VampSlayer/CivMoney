@@ -12,7 +12,7 @@ $nav-color: var(--cm-nav-color);
 $nav-text-color: var(--cm-nav-text-color);
 
 .civ-nav-bg {
-	background-color: $nav-color;
+	background-color: $nav-color !important;
 }
 
 .navbar-dark .navbar-text {
