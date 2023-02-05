@@ -3,6 +3,7 @@ import { createPinia } from "pinia";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAoRjrHf5dD84tsIIdBllsd7LKnJFAh3B4",
@@ -18,6 +19,7 @@ const firebaseConfig = {
 const firebase = initializeApp(firebaseConfig);
 getAnalytics(firebase);
 getAuth(firebase);
+getFirestore(firebase);
 
 // Initialize Vue
 import App from "./App.vue";
