@@ -5,6 +5,8 @@ import { Suspense } from "vue";
 
 <template>
   <Suspense>
-    <RouterView />
+    <div class="container-fluid h-container px-0">
+      <RouterView />
+    </div>
   </Suspense>
 </template>

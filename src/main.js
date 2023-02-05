@@ -5,6 +5,13 @@ import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
+// Styles
+import "./assets/micon.min.css";
+import "./assets/themes.css";
+import "./assets/style.scss";
+
+import "bootstrap/dist/css/bootstrap.css";
+
 const firebaseConfig = {
   apiKey: "AIzaSyAoRjrHf5dD84tsIIdBllsd7LKnJFAh3B4",
   authDomain: "civmoney.firebaseapp.com",
@@ -23,11 +30,11 @@ getFirestore(firebase);
 
 // Initialize Vue
 import App from "./App.vue";
-import router from "./router";
+import Router from "./router";
 
 const app = createApp(App);
 
 app.use(createPinia());
-app.use(router);
+app.use(Router);
 
 app.mount("#app");
